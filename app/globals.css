@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-emerald-300: #5ee9b5;
+  --color-emerald-400: #00d294;
+  --color-emerald-500: #00bb7f;
+  --color-emerald-950: #002c22;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #9f9fa9;
+  --color-zinc-500: #71717b;
+  --color-zinc-600: #52525c;
+  --color-zinc-950: #09090b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #f4f4f5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  background-color: #09090b;
+  font-family: "Times New Roman", "Liberation Serif", "Nimbus Roman", Times, serif;
+}
+
+::selection {
+  background: #10b98159;
+}
+
+@keyframes aetherix-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aetherix-zoom {
+  0% {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+
+.rise {
+  animation: 0.8s ease-out both aetherix-rise;
+}
+
+.rise-1 {
+  animation-delay: 50ms;
+}
+
+.rise-2 {
+  animation-delay: 0.15s;
+}
+
+.rise-3 {
+  animation-delay: 0.25s;
+}
+
+.art-hover:hover img {
+  animation: 6s ease-out forwards aetherix-zoom;
+}
