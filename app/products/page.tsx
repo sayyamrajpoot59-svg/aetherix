@@ -91,7 +91,7 @@ export default function ProductsPage() {
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
-            <div className="glow-hover overflow-hidden rounded-2xl border border-white/10">
+            <div className="glow-hover overflow-hidden rounded-2xl border border-white/[0.08]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/art/n1.png"

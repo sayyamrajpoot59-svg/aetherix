@@ -80,7 +80,7 @@ export default function HomePage() {
           {[1, 2, 3, 4, 5, 6].map((n, i) => (
             <Reveal key={n} delay={i * 60}>
               <div
-                className="art-hover card-lift aspect-square overflow-hidden rounded-xl border border-white/10 bg-white/[0.02]"
+                className="art-hover card-lift aspect-square overflow-hidden rounded-xl border border-white/[0.08] bg-[#121215]"
                 style={{ animationDelay: `${i * 0.08}s` }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -169,7 +169,7 @@ export default function HomePage() {
       </section>
 
       <section
-        className="border-y border-white/5 bg-white/[0.02] px-4 py-20 sm:px-6 sm:py-28"
+        className="border-y border-white/5 bg-[#121215] px-4 py-20 sm:px-6 sm:py-28"
         aria-label="Principles"
       >
         <div className="mx-auto max-w-7xl">
@@ -211,7 +211,7 @@ export default function HomePage() {
               </h2>
             </div>
             <Link
-              className="glow-hover hidden items-center gap-1.5 rounded-full border border-white/10 px-4 py-2 text-sm text-zinc-300 transition-colors hover:text-blue-400 sm:inline-flex"
+              className="glow-hover hidden items-center gap-1.5 rounded-full border border-white/[0.08] px-4 py-2 text-sm text-zinc-300 transition-colors hover:text-blue-400 sm:inline-flex"
               href="/news"
             >
               All news
@@ -222,7 +222,7 @@ export default function HomePage() {
             {FEATURED_NEWS.map((item, i) => (
               <Reveal key={item.href} delay={i * 80} className="h-full">
                 <Link
-                  className="card-lift glow-hover group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02]"
+                  className="card-lift glow-hover group flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#121215]"
                   href={item.href}
                 >
                   <div

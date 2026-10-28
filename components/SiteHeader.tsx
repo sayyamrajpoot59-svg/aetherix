@@ -16,7 +16,7 @@ export default function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="glass sticky top-0 z-50 border-b border-white/10">
+    <header className="glass sticky top-0 z-50 border-b border-white/[0.08]">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
           className="brand-lockup flex items-center gap-2.5"
@@ -75,7 +75,7 @@ export default function SiteHeader() {
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-[#0a0a12] px-4 pb-6 pt-2 md:hidden">
+        <div className="border-t border-white/[0.08] bg-[#0a0a12] px-4 pb-6 pt-2 md:hidden">
           <nav className="flex flex-col" aria-label="Mobile">
             {NAV_LINKS.map((link) => (
               <Link

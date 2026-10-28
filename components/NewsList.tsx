@@ -104,7 +104,7 @@ export default function NewsList() {
               All news
             </h1>
             <div
-              className="glass inline-flex rounded-full border border-white/10 p-1"
+              className="glass inline-flex rounded-full border border-white/[0.08] p-1"
               role="tablist"
               aria-label="Filter news"
             >
@@ -127,7 +127,7 @@ export default function NewsList() {
           </div>
           </Reveal>
           <Reveal delay={80}>
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6">
+          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/[0.08] pb-6">
             <p className="text-xs uppercase tracking-widest text-zinc-500">
               {filtered.length} article{filtered.length === 1 ? "" : "s"}
             </p>
@@ -138,7 +138,7 @@ export default function NewsList() {
               />
               <input
                 placeholder="Enter search..."
-                className="h-10 w-56 rounded-full border border-white/10 bg-white/[0.03] pl-10 pr-4 text-sm text-white placeholder:text-zinc-500 focus:border-blue-500/60 focus:ring-2 focus:ring-blue-500/30 focus:outline-none"
+                className="h-10 w-56 rounded-full border border-white/[0.08] bg-[#121215] pl-10 pr-4 text-sm text-white placeholder:text-zinc-500 focus:border-blue-500/60 focus:ring-2 focus:ring-blue-500/30 focus:outline-none"
                 aria-label="Search news"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
@@ -174,7 +174,7 @@ export default function NewsList() {
                 <div
                   className={
                     article.img
-                      ? "glow-hover aspect-[16/10] overflow-hidden rounded-xl border border-white/10"
+                      ? "glow-hover aspect-[16/10] overflow-hidden rounded-xl border border-white/[0.08]"
                       : "hidden aspect-[16/10] rounded-xl border border-white/5 bg-gradient-to-br from-indigo-500/10 to-transparent lg:block"
                   }
                 >

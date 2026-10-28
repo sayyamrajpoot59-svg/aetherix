@@ -73,7 +73,7 @@ export default function CompanyPage() {
           </Reveal>
           <div className="space-y-4">
             <Reveal delay={80}>
-            <div className="glow-hover overflow-hidden rounded-2xl border border-white/10">
+            <div className="glow-hover overflow-hidden rounded-2xl border border-white/[0.08]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/art/g5.png"
@@ -85,7 +85,7 @@ export default function CompanyPage() {
             <div className="grid gap-4 sm:grid-cols-3">
               {FACTS.map((fact, i) => (
                 <Reveal key={fact.label} delay={140 + i * 60} className="h-full">
-                  <div className="card-lift glow-hover h-full rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+                  <div className="card-lift glow-hover h-full rounded-2xl border border-white/[0.08] bg-[#121215] p-4">
                     <fact.icon
                       className="h-4 w-4 text-blue-400 drop-shadow-[0_0_6px_rgba(96,165,250,0.8)]"
                       aria-hidden="true"
@@ -105,7 +105,7 @@ export default function CompanyPage() {
       </section>
 
       <section
-        className="border-y border-white/5 bg-white/[0.02] px-4 py-20 sm:px-6"
+        className="border-y border-white/5 bg-[#121215] px-4 py-20 sm:px-6"
         aria-label="Founder"
       >
         <div className="mx-auto max-w-7xl">
@@ -116,7 +116,7 @@ export default function CompanyPage() {
             </p>
           </div>
           <Reveal delay={60}>
-          <div className="glow-hover mt-8 flex flex-col items-start gap-8 rounded-3xl border border-white/10 bg-zinc-950 p-8 sm:flex-row sm:items-center sm:justify-between sm:p-12">
+          <div className="glow-hover mt-8 flex flex-col items-start gap-8 rounded-3xl border border-white/[0.08] bg-zinc-950 p-8 sm:flex-row sm:items-center sm:justify-between sm:p-12">
             <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
               <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-2xl border border-blue-500/30 bg-blue-500/10 shadow-[0_0_36px_-12px_rgba(59,130,246,0.7)]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
