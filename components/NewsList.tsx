@@ -2,8 +2,9 @@
 
 import { useMemo, useState } from "react";
 import { ArrowUpRight, Search } from "lucide-react";
+import { Reveal } from "@/components/ui/reveal";
 
-const AGENTGUARD_URL = "https://agentguard-chi-mocha.vercel.app";
+const AGENTGUARD_URL = "https://agentguardapp.vercel.app";
 
 type Article = {
   id: string;
@@ -97,12 +98,13 @@ export default function NewsList() {
     <div className="pb-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col gap-6 pt-16 sm:pt-24">
+          <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl">
               All news
             </h1>
             <div
-              className="inline-flex rounded-full border border-white/10 bg-white/[0.03] p-1"
+              className="glass inline-flex rounded-full border border-white/10 p-1"
               role="tablist"
               aria-label="Filter news"
             >
@@ -113,8 +115,8 @@ export default function NewsList() {
                   aria-selected={tab === t}
                   className={
                     tab === t
-                      ? "rounded-full px-5 py-2 text-[15px] transition-colors bg-white text-zinc-950 font-semibold"
-                      : "rounded-full px-5 py-2 text-[15px] transition-colors text-zinc-400 hover:text-white"
+                      ? "btn-gradient rounded-full px-5 py-2 text-[15px] font-semibold"
+                      : "rounded-full px-5 py-2 text-[15px] text-zinc-400 transition-colors hover:text-white"
                   }
                   onClick={() => setTab(t)}
                 >
@@ -123,6 +125,8 @@ export default function NewsList() {
               ))}
             </div>
           </div>
+          </Reveal>
+          <Reveal delay={80}>
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6">
             <p className="text-xs uppercase tracking-widest text-zinc-500">
               {filtered.length} article{filtered.length === 1 ? "" : "s"}
@@ -134,18 +138,20 @@ export default function NewsList() {
               />
               <input
                 placeholder="Enter search..."
-                className="h-10 w-56 rounded-full border border-white/10 bg-white/[0.03] pl-10 pr-4 text-sm text-white placeholder:text-zinc-500 focus:border-emerald-500/50 focus:outline-none"
+                className="h-10 w-56 rounded-full border border-white/10 bg-white/[0.03] pl-10 pr-4 text-sm text-white placeholder:text-zinc-500 focus:border-blue-500/60 focus:ring-2 focus:ring-blue-500/30 focus:outline-none"
                 aria-label="Search news"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
             </label>
           </div>
+          </Reveal>
         </div>
 
         <div className="mt-2 divide-y divide-white/5">
-          {filtered.map((article) => (
-            <article key={article.id} id={article.id} className="scroll-mt-24 py-10">
+          {filtered.map((article, i) => (
+            <Reveal key={article.id} delay={Math.min(i, 6) * 60}>
+            <article id={article.id} className="scroll-mt-24 py-10">
               <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-center">
                 <div>
                   <p className="text-[11px] font-semibold uppercase tracking-widest text-zinc-500">
@@ -159,7 +165,7 @@ export default function NewsList() {
                   </p>
                   <a
                     href={AGENTGUARD_URL}
-                    className="mt-5 inline-flex items-center gap-1.5 text-sm text-emerald-400 hover:text-emerald-300"
+                    className="mt-5 inline-flex items-center gap-1.5 text-sm text-blue-400 hover:text-blue-300"
                   >
                     Read on AgentGuard
                     <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -168,8 +174,8 @@ export default function NewsList() {
                 <div
                   className={
                     article.img
-                      ? "aspect-[16/10] overflow-hidden rounded-xl border border-white/10"
-                      : "hidden aspect-[16/10] rounded-xl border border-white/5 bg-gradient-to-br from-emerald-500/10 to-transparent lg:block"
+                      ? "glow-hover aspect-[16/10] overflow-hidden rounded-xl border border-white/10"
+                      : "hidden aspect-[16/10] rounded-xl border border-white/5 bg-gradient-to-br from-indigo-500/10 to-transparent lg:block"
                   }
                 >
                   {article.img && (
@@ -184,6 +190,7 @@ export default function NewsList() {
                 </div>
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
       </div>

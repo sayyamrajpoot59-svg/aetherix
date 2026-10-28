@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowUpRight, Check } from "lucide-react";
+import { Reveal } from "@/components/ui/reveal";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -7,7 +9,7 @@ export const metadata: Metadata = {
     "The Aetherix product family — starting with AgentGuard, the governance layer for every AI tool you run.",
 };
 
-const AGENTGUARD_URL = "https://agentguard-chi-mocha.vercel.app";
+const AGENTGUARD_URL = "https://agentguardapp.vercel.app";
 
 const FEATURES = [
   "Every AI tool monitored by default — not a list you pick from",
@@ -28,10 +30,10 @@ export default function ProductsPage() {
             </p>
           </div>
           <h1 className="mt-6 text-4xl leading-[1.18] tracking-tight sm:text-5xl sm:leading-[1.16]">
-            <span className="font-bold text-white">
+            <span className="anim-fade-up font-bold text-white">
               Built to keep people in command.
             </span>{" "}
-            <span className="text-zinc-300">
+            <span className="anim-fade-up anim-delay-1 text-zinc-300">
               One conviction runs through everything Aetherix ships: powerful
               software, human judgment, no trade-off.
             </span>
@@ -40,15 +42,21 @@ export default function ProductsPage() {
       </section>
 
       <section className="px-4 py-10 sm:px-6" aria-label="AgentGuard">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-emerald-500/25 bg-gradient-to-b from-emerald-500/[0.08] via-white/[0.02] to-transparent">
+        <Reveal>
+        <SpotlightCard
+          glowColor="99, 102, 246"
+          glowSize={520}
+          glowOpacity={0.13}
+          className="glow-hover overflow-hidden rounded-3xl border border-blue-500/25 bg-gradient-to-b from-indigo-500/[0.09] via-white/[0.02] to-transparent"
+        >
           <div className="grid gap-10 p-8 sm:p-12 lg:grid-cols-[1.2fr_1fr] lg:items-center">
             <div>
               <div className="flex items-center gap-3">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
-                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.9)]" />
                 </span>
-                <span className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400">
+                <span className="text-[11px] font-semibold uppercase tracking-widest text-blue-300">
                   Live — early access
                 </span>
               </div>
@@ -68,7 +76,7 @@ export default function ProductsPage() {
                     className="flex items-start gap-2.5 text-sm text-zinc-300"
                   >
                     <Check
-                      className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-blue-400 drop-shadow-[0_0_6px_rgba(96,165,250,0.8)]"
                       aria-hidden="true"
                     />
                     {feature}
@@ -77,13 +85,13 @@ export default function ProductsPage() {
               </ul>
               <a
                 href={AGENTGUARD_URL}
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-6 py-3 text-[15px] font-semibold text-emerald-950 transition-colors hover:bg-emerald-400"
+                className="btn-gradient mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-[15px] font-semibold"
               >
                 Open AgentGuard
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-white/10">
+            <div className="glow-hover overflow-hidden rounded-2xl border border-white/10">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/art/n1.png"
@@ -92,7 +100,8 @@ export default function ProductsPage() {
               />
             </div>
           </div>
-        </div>
+        </SpotlightCard>
+        </Reveal>
       </section>
     </main>
   );

@@ -2,14 +2,14 @@ import Link from "next/link";
 
 export default function SiteFooter() {
   return (
-    <footer className="mt-auto border-t border-white/10 bg-zinc-950">
+    <footer className="mt-auto border-t border-white/10 bg-black">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-2.5">
+            <div className="brand-lockup flex items-center gap-2.5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/aetherix-orb.png" alt="Aetherix logo" className="h-8 w-8" />
-              <span className="text-lg font-bold tracking-[0.14em] text-white">
+              <img src="/aetherix-orb.png" alt="Aetherix logo" className="brand-logo h-8 w-8 rounded-lg" />
+              <span className="brand-name font-display text-lg font-bold tracking-[0.14em]">
                 AETHERIX
               </span>
             </div>
@@ -26,15 +26,15 @@ export default function SiteFooter() {
             <ul className="mt-4 space-y-2.5 text-[15px]">
               <li>
                 <a
-                  href="https://agentguard-chi-mocha.vercel.app"
-                  className="text-zinc-300 hover:text-emerald-400"
+                  href="https://agentguardapp.vercel.app"
+                  className="text-zinc-300 transition-colors hover:text-blue-400"
                 >
                   AgentGuard
                 </a>
               </li>
               <li>
                 <Link
-                  className="text-zinc-300 hover:text-emerald-400"
+                  className="text-zinc-300 transition-colors hover:text-blue-400"
                   href="/products"
                 >
                   Product family
@@ -49,21 +49,21 @@ export default function SiteFooter() {
             <ul className="mt-4 space-y-2.5 text-[15px]">
               <li>
                 <Link
-                  className="text-zinc-300 hover:text-emerald-400"
+                  className="text-zinc-300 transition-colors hover:text-blue-400"
                   href="/company"
                 >
                   About
                 </Link>
               </li>
               <li>
-                <Link className="text-zinc-300 hover:text-emerald-400" href="/news">
+                <Link className="text-zinc-300 transition-colors hover:text-blue-400" href="/news">
                   News
                 </Link>
               </li>
               <li>
                 <a
                   href="mailto:sayyamrajpoot59@gmail.com"
-                  className="text-zinc-300 hover:text-emerald-400"
+                  className="text-zinc-300 transition-colors hover:text-blue-400"
                 >
                   Contact
                 </a>
@@ -77,16 +77,16 @@ export default function SiteFooter() {
             <ul className="mt-4 space-y-2.5 text-[15px]">
               <li>
                 <a
-                  href="https://agentguard-chi-mocha.vercel.app/privacy"
-                  className="text-zinc-300 hover:text-emerald-400"
+                  href="https://agentguardapp.vercel.app/privacy"
+                  className="text-zinc-300 transition-colors hover:text-blue-400"
                 >
                   Privacy
                 </a>
               </li>
               <li>
                 <a
-                  href="https://agentguard-chi-mocha.vercel.app/terms"
-                  className="text-zinc-300 hover:text-emerald-400"
+                  href="https://agentguardapp.vercel.app/terms"
+                  className="text-zinc-300 transition-colors hover:text-blue-400"
                 >
                   Terms
                 </a>

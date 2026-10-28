@@ -1,10 +1,31 @@
 import type { Metadata, Viewport } from "next";
+import { Inter, Space_Grotesk, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 
+// Typography system — the same trio AgentGuard runs: Space Grotesk for
+// display/headings, Inter for body/UI, Geist Mono for code. Self-hosted via
+// next/font so every device renders identically with zero FOUT.
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aetherix-site.vercel.app"),
+  metadataBase: new URL("https://aetherix-app.vercel.app"),
   title: {
     default: "Aetherix — AI products that put oversight at the frontier",
     template: "%s — Aetherix",
@@ -31,7 +52,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#09090b",
+  themeColor: "#0a0a12",
 };
 
 export default function RootLayout({
@@ -41,7 +62,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex min-h-screen flex-col bg-zinc-950">
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} ${geistMono.variable} flex min-h-screen flex-col bg-[#0a0a12]`}
+      >
         <SiteHeader />
         {children}
         <SiteFooter />
