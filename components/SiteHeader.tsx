@@ -75,7 +75,7 @@ export default function SiteHeader() {
       </div>
 
       {open && (
-        <div className="border-t border-white/[0.08] bg-[#0a0a12] px-4 pb-6 pt-2 md:hidden">
+        <div className="border-t border-white/[0.08] bg-[#09090b] px-4 pb-6 pt-2 md:hidden">
           <nav className="flex flex-col" aria-label="Mobile">
             {NAV_LINKS.map((link) => (
               <Link

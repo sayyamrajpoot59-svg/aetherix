@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a12",
+  themeColor: "#09090b",
 };
 
 export default function RootLayout({
@@ -63,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${geistMono.variable} flex min-h-screen flex-col bg-[#0a0a12]`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${geistMono.variable} flex min-h-screen flex-col bg-[#09090b]`}
       >
         <SiteHeader />
         {children}
