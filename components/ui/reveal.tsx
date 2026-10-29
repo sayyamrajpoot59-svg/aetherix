@@ -4,9 +4,12 @@ import * as React from "react";
 
 /**
  * Scroll-reveal wrapper — the same pattern AgentGuard's console uses.
- * Children start slightly translated + transparent and ease into place the
- * first time they enter the viewport (one shared IntersectionObserver for the
- * whole page — cheap, fire-once).
+ * Children start slightly translated + transparent and ease into place each
+ * time they enter the viewport (one shared IntersectionObserver for the
+ * whole page — cheap).
+ *
+ * Replays: `is-visible` is removed while the element is fully out of view,
+ * so scrolling back and re-entering re-runs the animation every time.
  *
  * The `reveal` base class is only rendered by this client component, so
  * without JavaScript content simply renders visible — nothing is ever hidden
@@ -24,10 +27,12 @@ function getObserver(): IntersectionObserver | null {
     sharedObserver = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          revealCallbacks.get(entry.target)?.();
-          revealCallbacks.delete(entry.target);
-          sharedObserver?.unobserve(entry.target);
+          if (entry.isIntersecting) {
+            revealCallbacks.get(entry.target)?.();
+          } else {
+            // fully out of view → reset so the reveal replays on re-entry
+            entry.target.classList.remove("is-visible");
+          }
         }
       },
       { threshold: 0.12, rootMargin: "0px 0px -48px 0px" },
